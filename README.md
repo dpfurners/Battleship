@@ -35,13 +35,13 @@ Questions:
 Result: Working Login/Registration with DB Integration
 
  - Setup Database (Dominik)
-  - What data should be stored?
-  - Normalization
-  - API?
+    - What data should be stored?
+    - Normalization
+    - API?
  - Login/Registration? Screen (Emanuel)
-  - Login GUI/Registration GUI
-  - Output to get the Username/Password
+    - Login GUI/Registration GUI
+    - Output to get the Username/Password
  - Basic Client-Server Setup (Aleks)
-  - Client is able to connect to the server
-  - Server receives Login and Calls Database Login
-  - Server Returns Client Model to the Client (dataclass)
+    - Client is able to connect to the server
+    - Server receives Login and Calls Database Login
+    - Server Returns Client Model to the Client (dataclass)
