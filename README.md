@@ -1,4 +1,4 @@
-# Sprint 1
+# Sprint 0
   Working Login/Registration with Database Integration
 
 ## Questions:
