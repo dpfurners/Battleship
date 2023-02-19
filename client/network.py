@@ -32,3 +32,7 @@ class NetworkClientBase:
 
         self.conn.send(data)
 
+if __name__ == '__main__':
+    client = NetworkClientBase("localhost", 1234)
+    print(client.connect("aleks", "Baum1234"))
+
