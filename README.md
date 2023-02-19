@@ -15,7 +15,7 @@
  - Login/Registration? Screen (Emanuel)
     - Login GUI/Registration GUI
     - Output to get the Username/Password
- - Basic Client-Server Setup (Aleks)
+ - Basic Client-Server Setup (Aleks) -> Done
     - Client is able to connect to the server
     - Server receives Login and Calls Database Login
     - Server Returns Client Model to the Client (dataclass)
