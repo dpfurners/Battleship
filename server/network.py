@@ -6,3 +6,6 @@ store the clients as object and handle the communication between the server and 
 
 IMPORTANT: This is the only file that is used to access the network. (Only file with socket objects)
 """
+
+class Server:
+    pass
