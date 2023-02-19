@@ -13,9 +13,16 @@ class NetworkClientBase:
         self.addr = (host, port)
         self.conn: socket.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    def connect(self):
+    def connect(self, username: str, password: str) -> bool:
 
         self.conn.connect(self.addr)
+        data = f"{username}-{password}"
+        self.send(data.encode())
+        approved = self.recv(1024).decode()
+        if approved == "connected":
+            return True
+        else:
+            return False
 
     def recv(self, size: int) -> bytes:
 
