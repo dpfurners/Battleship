@@ -7,6 +7,7 @@ store the clients as object and handle the communication between the server and 
 IMPORTANT: This is the only file that is used to access the network. (Only file with socket objects)
 """
 import socket
+import database
 
 class NetworkServerBase:
     def __init__(self, host: str, port: int) -> None:
@@ -28,6 +29,16 @@ class NetworkServerBase:
             data = self.recv(1024, sock).decode()
             username, password = data.split("-")
             # todo: Connect to database
+            LogIn = database.DB_LogIn(username, password)
+            if LogIn[0] == False:
+                if LogIn[1] == True:
+                    self.send("wrong password".encode(), sock)
+                    continue
+                else:
+                    LogIn = database.DB_SignIn(username, password)
+                    if LogIn == False:
+                        self.send("something went wrong".encode(), sock)
+
             self.clients[username] = [sock, addr]
             self.send("connected".encode(), sock)
             print(f"{username}-{password}")
@@ -39,6 +50,7 @@ class NetworkServerBase:
     def send(self, data: bytes, client: socket.socket) -> None:
 
         client.send(data)
+
 
 if __name__ == '__main__':
     server = NetworkServerBase("localhost", 1234)
