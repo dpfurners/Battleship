@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine, Column, String, Integer
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
 
 Base = declarative_base()
 
@@ -18,7 +17,8 @@ class User(Base):
 
 
 #--making a connection to database--
-engine = create_engine(url='mysql+mysqlconnector://root:@localhost:3306/battleship_data', echo=True)
+engine = create_engine('sqlite:///mydb.db', echo=True)
+Base.metadata.create_all(bind=engine)
 
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -42,10 +42,12 @@ def DB_LogIn(username, password):
     #--checking if there is one user with this username--
     if count == 1: 
         data = session.query(User).filter(User.username == username).first()
+    else:
+        return [False, False]
         #--checking if the password is correct--
-        if data.password == password:
-            return [True, data.wins]
-    return [False]
+    if data.password == password:
+        return [True, data.wins]
+    return [False, True]
 
 
 #--function to add a win to a user--
