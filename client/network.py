@@ -5,7 +5,8 @@ It includes a class to connect to the server and handle the communication to the
 
 IMPORTANT: This is the only file that is used to access the network. (Only file with socket objects)
 """
-import socket 
+import socket
+
 
 class NetworkClientBase:
     def __init__(self, host: str | None = None, port: int | None = None) -> None:
@@ -32,7 +33,7 @@ class NetworkClientBase:
 
         self.conn.send(data)
 
+
 if __name__ == '__main__':
     client = NetworkClientBase("localhost", 1234)
     print(client.connect("aleks", "Baum1234"))
-

@@ -9,6 +9,7 @@ IMPORTANT: This is the only file that is used to access the network. (Only file 
 import socket
 import database
 
+
 class NetworkServerBase:
     def __init__(self, host: str, port: int) -> None:
 
@@ -17,7 +18,7 @@ class NetworkServerBase:
         self.clients = {}
         self.bind(host, port)
 
-    def bind(self,  host: str, port: int) -> None:
+    def bind(self, host: str, port: int) -> None:
 
         self.conn.bind((host, port))
 
@@ -55,4 +56,3 @@ class NetworkServerBase:
 if __name__ == '__main__':
     server = NetworkServerBase("localhost", 1234)
     server.accept()
-
