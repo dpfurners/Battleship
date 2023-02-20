@@ -12,7 +12,7 @@
     - Login with any credentials
     - The Client will get a message from the Server
     - The Server prints the username-password combination
-
+  
 ## Task 
 
 Screen:
