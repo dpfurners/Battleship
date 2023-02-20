@@ -1,3 +1,3 @@
-My part was the loginscreen wich I programmed with pyqt6. It's very simple just a little window with a field for the username and another for the password. 
-It also prints out an error window if you dont fill in the fields. There is also a "ok" and a "abbrechen" button.
-I did not have any problems with qt. The only problem i encountered was the installation of qt6 on my main computer.
+My part was the login screen which I programmed with pyqt6. It's very simple, little window with a field for the username and another for the password. 
+It also pops out an error window if you don't fill in the fields. There is also a "ok" and a "abbrechen" button.
+I didn't have any problems with qt. The only problem I encountered was the installation of qt6 on my main computer.
