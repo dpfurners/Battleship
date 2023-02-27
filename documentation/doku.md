@@ -19,5 +19,3 @@
 
 #### What did i do?
 #### How did it go?
-
-
