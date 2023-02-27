@@ -1,17 +1,12 @@
 # Battleship
   Software Engineering project using the SCRUM-Development
 
-## Current State (Sprint 0)
-    - Login Screen
-    - Basic Client-Server Setup
-    - Database Setup
+## Current State (Sprint 1)
+    - Matchmaking
+    - Game-Window
 
 ## How to test it:
-    - Start the Server
-    - Start the Client
-    - Login with any credentials
-    - The Client will get a message from the Server
-    - The Server prints the username-password combination
+    Currently tests are not really available, we have to many errors that we`ll fix in the next sprint.
   
 ## Task 
 

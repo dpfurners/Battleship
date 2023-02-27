@@ -10,8 +10,8 @@ class Window(QWidget):
         self.client = NetworkClientBase("localhost", 1234)
         # --QGridLayout ist eine Klasse, mit der ein gerastertes Layout mit Zeilen und Spalten erstellt werden kann, in denen verschiedene Widgets eingesetzt werden können.
         layout = QGridLayout()
-        # --Setzt den Namen des Fensters
-        self.setWindowTitle("Mein Login Screen")
+        #--Setzt den Namen des Fensters
+        self.setWindowTitle("Battleship")
         self.setLayout(layout)
 
         # ---Texte---
