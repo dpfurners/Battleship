@@ -60,3 +60,15 @@ def DB_GetWin(username):
 #--function to get all usernames--
 def DB_GetAllUsers():
     return [user.username for user in session.query(User)]
+
+#--function to get all usernames--
+def DB_GetAllUsers():
+    return [user.username for user in session.query(User)]
+
+#--function to get all usernames--
+def DB_GetAllUsers():
+    return [user.username for user in session.query(User)]
+
+#--function to get all usernames--
+def DB_GetAllUsers():
+    return [user.username for user in session.query(User)]
