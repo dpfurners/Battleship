@@ -12,24 +12,28 @@ class NetworkClientBase:
 
         self.addr = (host, port)
         self.conn: socket.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        # Instanzvariablen werden initialisiert
 
-    def connect(self, username: str, password: str) -> bool:
-
+    def connect(self, username: str, password: str, lobby: str) -> bool:
         self.conn.connect(self.addr)
-        data = f"{username}-{password}"
+        # Verbindung zur Adresse wird hergestellt
+        data = f"{username}-{password}-{lobby}"
+        # Datenstrom
         self.send(data.encode())
+        # An Server gesendet
         approved = self.recv(1024).decode()
+        # Empfangen vom Server
         if approved == "connected":
             return True
         else:
             return False
-
+        # Schaut, ob Verbindung besteht
     def recv(self, size: int) -> bytes:
-
+    # Erhalten von Daten als Bytes
         return self.conn.recv(size)
 
     def send(self, data: bytes):
-
+    # Sendet von Daten als Bytes
         self.conn.send(data)
 
 
