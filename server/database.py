@@ -56,3 +56,7 @@ def DB_LogIn(username, password):
 def DB_GetWin(username):
     session.query(User).filter(User.username == username).update({'wins': User.wins + 1})
     session.commit()
+
+#--function to get all usernames--
+def DB_GetAllUsers():
+    return [user.username for user in session.query(User)]
