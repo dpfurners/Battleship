@@ -14,7 +14,8 @@
 #### Adding a user, checking if the user exists and adding a win to a user works perfectly.
 
 #### How did it go?
-#### It wasn’t that hard to manage the task. I already knew how to code with pyalchemy because of last week. The only problem was I started to code on   #### Sunday but Daniel told us to be finished until Saturday night. In the future I definitely try to be on time.
+#### It wasn’t that hard to manage the task. I already knew how to code with pyalchemy because of last week. The only problem was I started to code on
+#### Sunday but Daniel told us to be finished until Saturday night. In the future I definitely try to be on time.
 #### Overall, it went really well, I finished my task again in about 3 hours.
 
 
