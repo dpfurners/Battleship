@@ -13,7 +13,13 @@
 ### 3. Emanuel
 
 #### What did i do?
+#### I programmed the game window, which is consists of 2 10 x 10 fields of buttons for the ships. 
+#### There is also a section for statistics which haven't been defined jet.
+
 #### How did it go?
+#### It went pretty well but the main problem with qt is, that if you change something about the window it doesn't just change what you wantet to change.
+#### It sometimes also changes things that should have stayed the same. 
+#### It takes a lot of time to get everything to look like you want it to look.
 
 ### 4. Aleks
 
