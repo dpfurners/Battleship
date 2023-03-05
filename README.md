@@ -4,7 +4,8 @@
 ## Current State (Sprint 2)
     - Matchmaking is done
     - Game-Window is done
-    - Ships can be placed
+    - Ships can be placed (The colissions detection is not right already)
+      So the ships that want to be changed will be placed ontop of each other
 
     overall: everything is done except the game logic when someone is shooting/win condition 
 
@@ -18,8 +19,7 @@
        - select a ship you want to move on the statistics screen
        - click on the field you want to place the ship
        - press [r] to rotate the ship
-    6. The game starts (currently no shooting)
-  
+
 ## Task 
 
 #### Screen:
