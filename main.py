@@ -1,14 +1,3 @@
-from client.gui.Login import Window
-from PyQt6.QtWidgets import QApplication
+from client import starter
 
-# --app, ein Objekt von QApplication, kümmert sich um die Anwendung.
-app = QApplication([])
-
-# --erstellt ein Objekt window aus der selbst beschriebenen Klasse Window().
-window = Window()
-
-# --window.show() lässt das Fenster anzeigen.
-window.show()
-
-# --Startet den Event-Loop
-app.exec()
+starter.start()
