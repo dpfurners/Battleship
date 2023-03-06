@@ -24,4 +24,11 @@
 ### 4. Aleks
 
 #### What did i do?
+    This week i made the ship models, the server logic, and i worked 
+    on the lobby system, because there were still problems with it.
 #### How did it go?
+    It went ok, I spent more than the given 1 1/2 hours per week, because 
+    it was quite difficult. Luckily Daniel was able to help me with errors 
+    where i couldn't find a solution. Now the lobby matchmaking and placing
+    ships on the field work, but I still have to fix certain things.
+    

@@ -26,7 +26,7 @@ class Ship:
         self.ship_parts: list[tuple[int, int]] = [(0, 0)]
 
     @classmethod
-    def new_ship(cls, pos, ssid):
+    def new_ship(cls, pos):
         return cls(0, "Default", pos, "horizontal")
 
     def __repr__(self):
