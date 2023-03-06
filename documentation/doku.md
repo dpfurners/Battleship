@@ -14,7 +14,13 @@
 ### 2. Dominik
 
 #### What did i do?
+    This week I coded two new functions: One of them checks if a ship can be placed in the chosen position. 
+    The other function changes the state of the array that stands for the player field, so it actually places the ships.
+    I also updtated old stuff like the database (e.g. created the database completely as a class)
 #### How did it go?
+    I didn't take me that long this time to complete my tasks. I almost had no problems and I was able to handle my tasks
+    in about an hour.
+    
 
 ### 3. Emanuel
 
