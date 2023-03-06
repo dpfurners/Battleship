@@ -1,13 +1,8 @@
 # Battleship
   Software Engineering project using the SCRUM-Development
 
-## Current State (Sprint 2)
-    - Matchmaking is done
-    - Game-Window is done
-    - Ships can be placed (The colissions detection is not right already)
-      So the ships that want to be changed will be placed ontop of each other
-
-    overall: everything is done except the game logic when someone is shooting/win condition 
+## Current State (Sprint 3)
+    Game Is Done
 
 ## How to test it:
     1. Start the Server
@@ -19,6 +14,11 @@
        - select a ship you want to move on the statistics screen
        - click on the field you want to place the ship
        - press [r] to rotate the ship
+    6. Validate Changes and Start the game
+    7. Shoot at the other player
+    8. Someone hit every ship
+    9. Player Won
+    10. Play Again :)
 
 ## Task 
 
