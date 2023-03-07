@@ -1,4 +1,4 @@
-from PyQt6 import Qt
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QLineEdit, QLabel, QWidget, QGridLayout, QPushButton, QMessageBox
 
 
