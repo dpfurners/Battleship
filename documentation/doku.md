@@ -25,7 +25,11 @@
 ### 3. Emanuel
 
 #### What did i do?
+    I codet the game window with a handler in the background who lets you move between the windows. 
+    There are still some problems with the placements of the ships.
 #### How did it go?
+    It pretty well. I got some help from daniel with the handler. 
+    Appart from the part with the ship placement i had no problems.
 
 ### 4. Aleks
 
