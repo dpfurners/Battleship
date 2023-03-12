@@ -22,8 +22,16 @@ class Game:
     player1_ships: list["Ship"] = field(default_factory=list)
     player2_field: list[list[str]] = field(default_factory=lambda: [["" for _ in range(12)] for _ in range(12)])
     player2_ships: list["Ship"] = field(default_factory=list)
-    still_positioning: bool = field(default=True)
+    player1_positioning: bool = field(default=True)
+    player2_positioning: bool = field(default=True)
     turn: bool = field(default=True)  # True = player1, False = player2
+    done: bool = field(default=False)
+    winner: Player = field(default=None)
+    loser: Player = field(default=None)
+    told: bool = field(default=False)
+
+    def __repr__(self):
+        return f"Game({self.player1.username}, {self.player2.username})"
 
     @staticmethod
     def insert_ship(play_field: list[list[str]], ship: "Ship") -> list[list[str]]:
@@ -48,14 +56,6 @@ class Game:
                         play_field[x - 1][y - 1] != "":
                     return False
             except IndexError:
-                return False
+                if 0 > x > 11 and 0 > y > 11:
+                    return False
         return True
-
-    @staticmethod
-    def hide(field: list[list[str]]) -> list[list[str]]:
-        for i in range(12):
-            for j in range(12):
-                if field[i][j] != "X" and field[i][j] != "-":
-                    field[i][j] = ""
-        return field
-
