@@ -1,5 +1,5 @@
 import typing
-from sqlalchemy import create_engine, Column, String, Integer
+from sqlalchemy import create_engine, Column, String, Integer, BINARY
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 if typing.TYPE_CHECKING:
@@ -13,7 +13,7 @@ class User(Base):
     __tablename__ = "users"
 
     username = Column("username", String(20), primary_key=True)
-    password = Column("password", String(20))
+    password = Column("password", BINARY(60), nullable=False)
     games = Column("games", Integer, default=0)
     wins = Column("wins", Integer, default=0)
     loses = Column("loses", Integer, default=0)

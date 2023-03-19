@@ -46,7 +46,8 @@ class NetworkServerBase:
                 # Für jedes "amount" wird die Client verbindung angenommen
                 data = self.recv(sock)
                 # Datenstrom wird empfangen, vom "sock" gelsesn und decodiert
-                username, password = data.split("-")
+                username = data["username"]
+                password = data["password"]
                 # Benutzername und Passwort werden durch Trennen des Datenstroms
                 # durch "-" extrahiert
                 if username in self.clients:
@@ -465,7 +466,8 @@ class NetworkServerWithLobby(NetworkServerBase):
                 # Für jedes "amount" wird die Client verbindung angenommen
                 data = self.recv(sock)
                 # Datenstrom wird empfangen, vom "sock" gelsesn und decodiert
-                username, password = data.split("-")
+                username = data["username"]
+                password = data["password"]
                 # Benutzername und Passwort werden durch Trennen des Datenstroms
                 # durch "-" extrahiert
                 if username in self.clients:

@@ -7,6 +7,7 @@ IMPORTANT: This is the only file that is used to access the network. (Only file 
 """
 import socket
 import pickle
+import hashlib
 
 
 class NetworkClientBase:
@@ -24,7 +25,7 @@ class NetworkClientBase:
     def connect(self, username: str, password: str) -> bool | str:
         self.conn.connect(self.addr)
         # Verbindung zur Adresse wird hergestellt
-        data = f"{username}-{password}"
+        data = {"username": username, "password": self.hash(password)}
         # Datenstrom
         self.send(data)
         # An Server gesendet
@@ -44,4 +45,7 @@ class NetworkClientBase:
         # Sendet von Daten als Bytes
         self.conn.send(pickle.dumps(data))
 
-
+    @staticmethod
+    def hash(plain_text: str) -> bytes:
+        # Hashen von Passwörtern
+        return hashlib.sha256(plain_text.encode()).digest()
