@@ -1,8 +1,11 @@
 # Battleship
   Software Engineering project using the SCRUM-Development
 
-## Current State (Sprint 3)
+## Current State (Sprint 4 - Final State)
     Game Is Done
+    Updates since Sprint 3: 
+     - Password is now hashed
+     - Image of ships are shown in the game window
 
 ## How to test it:
     1. Start the Server
