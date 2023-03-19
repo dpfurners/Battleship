@@ -36,9 +36,10 @@ class MatchingPage(QScrollArea):
                 btn_label = QLabel(client[0], self)
                 btn_label.setStyleSheet("text-align: right; padding-right: 5px")
                 btn_layout.addWidget(btn_label)
-                btn_layout.addWidget(QLabel(f"Games won: {client[1]}", self))
-                style_sheet = f"background-color: {'green' if client[2] else 'red'}; " \
-                              f"color: {'green' if client[3] else 'black'};"
+                btn_layout.addWidget(QLabel(f"Games: {client[1]}", self))
+                btn_layout.addWidget(QLabel(f"Win/Lose Ratio: {client[4]} - {client[2]}/{client[3]}", self))
+                style_sheet = f"background-color: {'green' if client[5] else 'red'}; " \
+                              f"color: {'green' if client[6] else 'black'};"
                 btn.setLayout(btn_layout)
                 btn.setStyleSheet(style_sheet)
                 btn.clicked.connect(partial(self.parent().connection.send, f"match\n{client[0]}"))
@@ -57,6 +58,15 @@ class MatchingPage(QScrollArea):
             self.parent().set_page("login")
             self.parent().connection.close()
             return
+        # Der Spieler erhält mehrere dieser "tuples" in einer Liste und in einem "tuple" sind folgende
+        # Informationen:
+        # 0. Der Benutzername
+        # 1. Die Anzahl der Spiele
+        # 2. Die Anzahl der Siege
+        # 3. Die Anzahl der Niederlagen
+        # 4. Die Win/Lose Ratio
+        # 5. Ob der Client ein Match mit dem Spieler hat
+        # 6. Ob der Spieler ein Match mit dem Client hat
         new = self.parent().connection.recv()
         if new == "game":
             self.parent().match_timer.stop()

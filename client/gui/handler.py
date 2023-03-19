@@ -29,7 +29,6 @@ class HandlerWindow(QMainWindow):
         }
 
         self.match_timer = QTimer()
-
         self.game_timer = QTimer()
 
         self.current_page = None

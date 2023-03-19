@@ -39,7 +39,7 @@ class Cruiser(Ship):
 
     @classmethod
     def new_ship(cls, coords: tuple[int, int], direction: Literal["horizontal", "vertical"] = "vertical"):
-        shp = cls(3, "Cruiser", coords, direction)
+        shp = cls(2, "Cruiser", coords, direction)
         shp.ship_parts = \
             [
                 coords,

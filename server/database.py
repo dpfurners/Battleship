@@ -14,7 +14,9 @@ class User(Base):
 
     username = Column("username", String(20), primary_key=True)
     password = Column("password", String(20))
-    wins = Column("wins", Integer)
+    games = Column("games", Integer, default=0)
+    wins = Column("wins", Integer, default=0)
+    loses = Column("loses", Integer, default=0)
 
     def __init__(self, username, password, wins):
         self.username = username
@@ -58,11 +60,22 @@ class DBInterface:
             return [True, data.wins]
         return [False, True]
 
-    # --function to add a win to a user--
-    def DB_GetWin(self, username):
+
+    def DB_AddWin(self, username):
         self.session.query(User).filter(User.username == username).update({'wins': User.wins + 1})
         self.session.commit()
 
+    def DB_AddLoss(self, username):
+        self.session.query(User).filter(User.username == username).update({'loses': User.loses + 1})
+        self.session.commit()
+
+    def DB_AddGame(self, username):
+        self.session.query(User).filter(User.username == username).update({'games': User.games + 1})
+        self.session.commit()
+
+    def DB_GetUser(self, username):
+        return self.session.query(User).filter(User.username == username).first()
+
     # --function to get all usernames--
     def DB_GetAllUsers(self):
-        return [user.username for user in self.session.query(User)]
+        return [user for user in self.session.query(User)]
