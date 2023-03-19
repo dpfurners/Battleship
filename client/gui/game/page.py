@@ -1,4 +1,4 @@
-from PyQt6.QtCore import QRect
+from PyQt6.QtCore import QRect, QTimer, Qt
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QWidget, QBoxLayout, QMessageBox, QLabel
 from PyQt6 import QtGui
@@ -11,6 +11,7 @@ from client.gui.game.field import Field, Placing
 class GamePage(QWidget):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
 
         self.layout = QBoxLayout(QBoxLayout.Direction.LeftToRight, self)
         self.game = QBoxLayout(QBoxLayout.Direction.TopToBottom)
@@ -29,6 +30,8 @@ class GamePage(QWidget):
 
         self.image_label: QLabel | None = None
         self.images: list[QPixmap] | None = None
+        self.image_counter = 1
+        self.image_timer = QTimer()
 
     def init(self):
         self.parent().setFixedSize(800, 600)
@@ -49,8 +52,24 @@ class GamePage(QWidget):
 
         self.placing = Placing()
 
+        # Set up the images
+        self.images = [
+            QPixmap("client/assets/ships/cruiser.jpg"),
+            QPixmap("client/assets/ships/frigate.jpg"),
+            QPixmap("client/assets/ships/carrier.jpg")
+        ]
+        for i, image in enumerate(self.images):
+            self.images[i] = image.scaled(480, 350)
+
+        self.image_label = QLabel()
+        self.image_label.setPixmap(self.images[0])
+
         self.stats.addLayout(self.placing)
-        self.stats.addWidget(QLabel("Aircraft Carrier"))
+        self.stats.addWidget(self.image_label)
+
+        self.image_timer.timeout.connect(self.change_image)
+        self.image_timer.start(10000)
+
         self.game_update()
 
     def keyPressEvent(self, a0: QtGui.QKeyEvent) -> None:
@@ -90,6 +109,7 @@ class GamePage(QWidget):
             else:
                 QMessageBox.information(self, "Game over", "You lost!")
             self.parent().game_timer.stop()
+            self.image_timer.stop()
             self.parent().set_page("matching")
             return
         if self.selected:
@@ -161,3 +181,12 @@ class GamePage(QWidget):
                 if 0 > x > 11 and 0 > y > 11:
                     return False
         return True
+
+    def change_image(self):
+        self.stats.removeWidget(self.image_label)
+        self.image_label = QLabel()
+        self.image_label.setPixmap(self.images[self.image_counter])
+        self.stats.addWidget(self.image_label)
+        self.image_counter += 1
+        if self.image_counter == len(self.images):
+            self.image_counter = 0
