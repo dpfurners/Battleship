@@ -1,4 +1,4 @@
-## Documentation Sprint 4 (RealFinal Sprint)
+## Documentation Sprint 3 (Final Sprint)
 
 ### 1. Daniel
 
